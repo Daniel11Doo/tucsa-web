@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #E0E0E0;
+    color: #000;
+}
+
+/* ======= GRID LAYOUT PRINCIPAL ======= */
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* ======= HEADER / NAV ======= */
+.header {
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem;
+    background-color: #fff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.logo img {
+    max-height: 50px;
+    /* Ajusta si necesitas otro tamaño */
+}
+
+.footer-info .logo a>img {
+    max-height: 65px;
+    /* Ajusta si necesitas otro tamaño */
+}
+
+
+.navbar {
+    margin-right: 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #007bff;
+    /* Color de hover, cámbialo a tu gusto */
+}
+
+/* ======= MAIN ======= */
+.main-content {
+    grid-row: 2 / 3;
+    padding: 1.2rem;
+}
+
+/* ======= FOOTER ======= */
+.footer {
+    grid-row: 3 / 4;
+    background-color: #0D47A1;
+    color: #fff;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-info div {
+    margin: 0 auto;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
+
+/* ======= COPYRIGHT ======= */
+footer p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (min-width: 768px) {
+    .footer-info {
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,1 +1,11 @@
-<h1>Hola mundo</h1>
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h1>Bienvenido a Tucsa</h1>
+    <p>Aquí va la descripción o el contenido destacado de la página principal.</p>
+</section>
+{% endblock %} {% block scripts %}
+<script>
+    console.log("Página de inicio cargada.");
+</script>
+{% endblock %}

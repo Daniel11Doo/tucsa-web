@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tucsa {% block title %}{% endblock %}</title>
+    <link rel="checkout icon" href="{{ url_for('static', filename='images/logo_tucsa.ico') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    {% block head %}
+    {# Aquí puedes inyectar estilos adicionales en páginas específicas #}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/logo_tucsa.png') }}" alt="Tucsa" />
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('home') }}">Nosotros</a></li>
+                    <li><a href="{{ url_for('home') }}">Productos</a></li>
+                    <li><a href="{{ url_for('home') }}">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            {% block content %}
+            {# Aquí va el contenido específico de cada página #}
+            {% endblock %}
+        </main>
+
+        <footer class="footer">
+            <div class="footer-info">
+                <div class="logo">
+                    <a href="{{ url_for('home') }}">
+                        <img src="{{ url_for('static', filename='images/logo_tucsa.png') }}" alt="Tucsa" />
+                    </a>
+                </div>
+                <div class="office">
+                    <h4>Oficina Central</h4>
+                    <p>Callejón Periférico Sin Número</p>
+                    <p>Barrio San José Frente a Gorza,</p>
+                </div>
+                <div class="contact">
+                    <h4>Contacto</h4>
+                    <p><a href="mailto:contacto@tucsa.com">contacto@tucsa.com</a></p>
+                    <p>+52 961 123 4567</p>
+                </div>
+            </div>
+            <p class="copyright">
+                &copy; 2023 Tucsa. Todos los derechos reservados.
+            </p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    {% block scripts %}
+    {# Aquí puedes inyectar scripts específicos de cada página #}
+    {% endblock %}
+</body>
+
+</html>

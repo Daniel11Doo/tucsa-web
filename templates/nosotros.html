@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+- Nosotros
+{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='nosotros.css') }}" />
+{% endblock %}
+
+{% block content %}
+<!-- Sección de cabecera / hero -->
+<section class="nosotros-hero">
+    <!-- Ajusta la ruta de la imagen según tu carpeta static -->
+    <img src="{{ url_for('static', filename='images/tuberias_banner.jpg') }}" alt="Tuberías" class="hero-bg">
+    <h1>Nosotros</h1>
+</section>
+
+<!-- Sección: Quiénes somos -->
+<section class="quienes-somos">
+    <div class="qs-image">
+        <!-- Ejemplo de imagen de la empresa o camión -->
+        <img src="{{ url_for('static', filename='images/tucsa_camion.png') }}" alt="Camión de Tucsa">
+    </div>
+    <article class="qs-content">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            En <strong>Tucsa</strong>, nos especializamos en la distribución de productos de tubería, ofreciendo
+            soluciones confiables para diversos sectores. Ubicados en Ocosingo, MX, hemos construido una reputación
+            basada en la calidad, el compromiso y un servicio excepcional.
+        </p>
+    </article>
+</section>
+
+<!-- Sección: Misión y Visión -->
+<section class="valores">
+    <article class="mision">
+        <h2>Misión</h2>
+        <p>
+            Somos una empresa de productos de tubería de todo tipo que
+            satisfacen las necesidades de nuestros clientes, con asesoría, calidad y respaldo.
+        </p>
+        <br>
+        <p>
+            Actuamos basados en nuestros valores corporativos, preservando el sano equilibrio
+            entre los intereses de clientes, colaboradores, proveedores, accionistas y comunidad donde operamos.
+        </p>
+    </article>
+    <article class="vision">
+        <h2>Visión</h2>
+        <p>
+            Ser empresa en tubería de todo tipo preferida por nuestros clientes, brindándoles soluciones,
+            desarrollando el talento humano de nuestros colaboradores y generando actitudes de servicio y asesoría.
+        </p>
+    </article>
+</section>
+
+<!-- Sección: Llamada a la acción (CTA) -->
+<section class="cta-info">
+    <h2>Contáctanos para más información</h2>
+    <a href="{{ url_for('home') }}" class="btn-primary">Solicitar Información</a>
+</section>
+{% endblock %}

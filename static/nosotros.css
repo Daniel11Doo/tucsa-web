@@ -1,0 +1,182 @@
+/************************************
+ * Sección: Hero (Encabezado visual)
+ ************************************/
+.nosotros-hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* Ajusta la altura según tu diseño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d76be;
+    /* Color de fondo de respaldo */
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.nosotros-hero .hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0.5;
+    /* Efecto de transparencia para la imagen de fondo */
+}
+
+.nosotros-hero h1 {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/************************************
+   * Sección: ¿Quiénes somos?
+   ************************************/
+.quienes-somos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 0 1rem 2rem;
+    padding: 0 3rem;
+    padding-left: 5rem;
+}
+
+.qs-image img {
+    width: 500px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.qs-content {
+    width: 70%;
+    padding-left: 2.5rem;
+    margin-top: 2%;
+}
+
+.qs-content h2 {
+    color: #0D47A1;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.qs-content p {
+    line-height: 1.6;
+}
+
+/************************************
+   * Sección: Misión y Visión
+   ************************************/
+.valores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 1rem;
+    padding: 0 3rem;
+    padding-left: 5rem;
+
+}
+
+.valores article {
+    border-radius: 4px;
+    width: 70%;
+}
+
+
+
+.vision {
+    padding-left: 2.5rem;
+}
+
+.valores h2 {
+    color: #0D47A1;
+    margin-bottom: 1rem;
+}
+
+.valores p {
+    line-height: 1.6;
+}
+
+/************************************
+   * Sección: CTA (Contáctanos)
+   ************************************/
+.cta-info {
+    text-align: start;
+    background-color: #1976D2;
+    /* Color principal */
+    color: #fff;
+    padding: 2rem 7.5rem;
+    margin-top: 2rem;
+}
+
+.cta-info h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #fff;
+    color: #0D47A1;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e0e0e0;
+}
+
+/************************************
+   * Responsividad
+   ************************************/
+
+/* Ajustes para pantallas <= 1200px */
+@media (max-width: 1200px) {
+    .qs-image img {
+        width: 390px;
+    }
+
+    .qs-content {
+        width: 95%;
+    }
+
+    .valores article {
+        width: 95%;
+    }
+}
+
+/* Ajustes para pantallas <= 992px */
+@media (max-width: 992px) {
+    /* ... */
+}
+
+
+@media (max-width: 768px) {
+    .nosotros-hero {
+        height: 200px;
+    }
+
+    .quienes-somos {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .valores {
+        grid-template-columns: 1fr;
+    }
+
+    .qs-image,
+    .qs-content {
+        margin: 1rem auto;
+    }
+}

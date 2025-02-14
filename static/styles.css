@@ -64,7 +64,6 @@ body {
 /* ======= MAIN ======= */
 .main-content {
     grid-row: 2 / 3;
-    padding: 1.2rem;
 }
 
 /* ======= FOOTER ======= */

@@ -5,12 +5,10 @@
     position: relative;
     width: 100%;
     height: 300px;
-    /* Ajusta la altura según tu diseño */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #2d76be;
-    /* Color de fondo de respaldo */
     overflow: hidden;
     margin-bottom: 2rem;
 }
@@ -24,7 +22,6 @@
     top: 0;
     z-index: 1;
     opacity: 0.5;
-    /* Efecto de transparencia para la imagen de fondo */
 }
 
 .nosotros-hero h1 {
@@ -33,6 +30,13 @@
     color: #fff;
     font-size: 2rem;
     text-align: center;
+}
+
+.line-decoration {
+    width: 60px;
+    height: 2px;
+    background-color: #0D47A1;
+    margin-bottom: 1rem;
 }
 
 /************************************
@@ -48,8 +52,12 @@
     padding-left: 5rem;
 }
 
+/* .qs-image {
+    margin: 0 auto;
+} */
+
 .qs-image img {
-    width: 500px;
+    width: 530px;
     height: auto;
     border-radius: 4px;
 }
@@ -143,7 +151,7 @@
 /* Ajustes para pantallas <= 1200px */
 @media (max-width: 1200px) {
     .qs-image img {
-        width: 390px;
+        width: 100%;
     }
 
     .qs-content {
@@ -157,7 +165,15 @@
 
 /* Ajustes para pantallas <= 992px */
 @media (max-width: 992px) {
-    /* ... */
+
+    .valores,
+    .quienes-somos {
+        padding-left: 2.5rem
+    }
+
+    .qs-image img {
+        width: 100%;
+    }
 }
 
 
@@ -175,8 +191,52 @@
         grid-template-columns: 1fr;
     }
 
+    .valores article {
+        padding: 0;
+    }
+
     .qs-image,
     .qs-content {
         margin: 1rem auto;
+    }
+
+    .qs-content {
+        padding-left: 0;
+        margin: 1rem 0;
+        text-align: start;
+    }
+}
+
+/* Ajustes para pantallas <= 576px */
+@media (max-width: 576px) {
+    .nosotros-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .qs-image img {
+        width: 300px;
+    }
+
+    .quienes-somos,
+    .valores {
+        padding: 0 1rem;
+    }
+
+    .qs-content {
+        width: 98%;
+    }
+
+    .valores article {
+        width: 98%;
+    }
+
+    .cta-info {
+        text-align: start;
+        padding: 0.5rem 2rem;
+        margin-top: 2rem;
+    }
+
+    .cta-info h2 {
+        font-size: 1.5rem;
     }
 }

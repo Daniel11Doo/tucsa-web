@@ -42,19 +42,39 @@
     /* Dos columnas: info y formulario */
     gap: 2rem;
     margin: 0 1rem 2rem;
+    padding: 0 3rem;
+    /* justify-items: flex-start; */
+    align-items: center;
 }
 
 .contact-info {
     background-color: #f9f9f9;
     padding: 1.5rem;
     border-radius: 4px;
+    width: 500px;
+    justify-self: end;
 }
 
 .contact-info h2 {
     margin-bottom: 1rem;
+    color: #1976D2;
+    text-align: center;
 }
 
-.contact-info p {
+.container-sub-info {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.container-sub-info img {
+    margin-right: 1rem;
+    width: 25px;
+    height: auto;
+}
+
+.contact-sucur p {
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -79,14 +99,21 @@
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 4px;
+    width: 500px;
+    justify-self: start;
 }
 
 .form-group {
+    margin: 0 auto;
     margin-bottom: 1rem;
+    width: 85%;
+
 }
 
 .form-group label {
-    font-weight: bold;
+    display: inline-block;
+    font-weight: lighter;
+    margin-bottom: 0.3rem ! important;
 }
 
 .input-field,
@@ -96,6 +123,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font: inherit;
+    outline: none;
 }
 
 .textarea-field {
@@ -176,13 +204,39 @@
 /************************************
     RESPONSIVIDAD
   ************************************/
-@media (max-width: 768px) {
+/* Ajustes para pantallas <= 1200px */
+@media (max-width: 1200px) {
     .contact-section {
         grid-template-columns: 1fr;
         /* Una sola columna en pantallas pequeñas */
     }
 
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-info h2 {
+        text-align: start;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .form-group {
+        width: 95%;
+    }
+}
+
+/* Ajustes para pantallas <= 992px */
+@media (max-width: 992px) {}
+
+
+@media (max-width: 768px) {
     .contact-hero {
         height: 200px;
     }
 }
+
+/* Ajustes para pantallas <= 576px */
+@media (max-width: 576px) {}

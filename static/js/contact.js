@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         phone: {
             required: true,
-            pattern: /^[0-9()+-\s]{7,15}$/,
-            errorMsg: 'El teléfono debe tener entre 7 y 15 dígitos (sólo números y signos básicos).'
+            pattern: /^[0-9()+-\s]{10}$/,
+            errorMsg: 'El teléfono debe tener 10 dígitos (sólo números).'
         },
         message: {
             required: true,

@@ -17,20 +17,30 @@
     <!-- Información de contacto / sucursales -->
     <div class="contact-info">
         <h2>Solicita una Cotización</h2>
-        <p>
-            <strong>Sucursales:</strong><br>
-            Carretera Pénjamo S/N, Barrio San José<br>
-            Frente a la Gasera, Ocosingo, Chiapas, MX.<br>
-            San Antonio Centro, 29840 Chilón, Chiapas.<br>
-        </p>
-        <p>
-            <strong>Correo electrónico:</strong><br>
-            <a href="mailto:contact@tucsa.com">contact@tucsa.com</a>
-        </p>
-        <p>
-            <strong>Teléfono:</strong><br>
-            +52 961 341 2584
-        </p>
+        <div class="container-sub-info">
+            <img src="{{ url_for('static', filename='images/icons/ubicacion.png') }}" alt="ubicación">
+            <p>
+                <strong>Sucursales</strong><br>
+                Carretera Pénjamo S/N, Barrio San José<br>
+                Frente a la Gasera, Ocosingo, Chiapas, MX.<br><br>
+                San Antonio Centro, 29840 Chilón, Chiapas.<br>
+            </p>
+        </div>
+        <div class="container-sub-info">
+            <img src="{{ url_for('static', filename='images/icons/correo-electronico.png') }}" alt="correo">
+            <p>
+                <strong>Correo electrónico:</strong><br>
+                <a href="mailto:contact@tucsa.com">contact@tucsa.com</a>
+            </p>
+        </div>
+        <div class="container-sub-info">
+            <img src="{{ url_for('static', filename='images/icons/telefono.png') }}" alt="telefono">
+            <p>
+                <strong>Ventas</strong><br>
+                +52 961 341 2584
+            </p>
+        </div>
+
         <!-- Botón para WhatsApp -->
         <a href="https://wa.me/529613412584" class="btn-whatsapp">Enviar WhatsApp</a>
     </div>

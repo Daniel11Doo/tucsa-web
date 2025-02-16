@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Contacto{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='contacto.css') }}" />
+{% endblock %}
+{% block content %}
+
+<!-- Sección Hero para Contacto -->
+<section class="contact-hero">
+    <!-- Imagen de fondo -->
+    <img src="{{ url_for('static', filename='images/tuberias_banner.jpg') }}" alt="Banner de Contacto" class="hero-bg">
+    <h1>Contáctanos</h1>
+</section>
+
+<!-- Sección principal de Contacto -->
+<section class="contact-section">
+    <!-- Información de contacto / sucursales -->
+    <div class="contact-info">
+        <h2>Solicita una Cotización</h2>
+        <p>
+            <strong>Sucursales:</strong><br>
+            Carretera Pénjamo S/N, Barrio San José<br>
+            Frente a la Gasera, Ocosingo, Chiapas, MX.<br>
+            San Antonio Centro, 29840 Chilón, Chiapas.<br>
+        </p>
+        <p>
+            <strong>Correo electrónico:</strong><br>
+            <a href="mailto:contact@tucsa.com">contact@tucsa.com</a>
+        </p>
+        <p>
+            <strong>Teléfono:</strong><br>
+            +52 961 341 2584
+        </p>
+        <!-- Botón para WhatsApp -->
+        <a href="https://wa.me/529613412584" class="btn-whatsapp">Enviar WhatsApp</a>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="contact-form">
+        <form id="contactForm">
+            {{ form.csrf_token }}
+
+            <div class="form-group">
+                {{ form.name.label }}<br>
+                {{ form.name(class="input-field", placeholder="Nombre") }}
+                {% for error in form.name.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+                <div id="name-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                {{ form.email.label }}<br>
+                {{ form.email(class="input-field", placeholder="Correo Electrónico") }}
+                {% for error in form.email.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+                <div id="email-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                {{ form.phone.label }}<br>
+                {{ form.phone(class="input-field", placeholder="Teléfono") }}
+                {% for error in form.phone.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+                <div id="phone-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                {{ form.message.label }}<br>
+                {{ form.message(class="textarea-field", placeholder="Mensaje") }}
+                {% for error in form.message.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+                <div id="message-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-primary">Enviar</button>
+            </div>
+        </form>
+        <div id="formAlerts" class="form-alerts"></div>
+    </div>
+</section>
+
+<!-- Sección de mapa (opcional) -->
+<section class="map-section">
+    <h2>Nuestra Ubicación</h2>
+    <!-- Inserta tu mapa de Google con embed -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;"
+        allowfullscreen="" loading="lazy">
+    </iframe>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}

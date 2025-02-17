@@ -1,5 +1,5 @@
 "use strict";
-const endpoint = 'http://127.0.0.1:5000/contacto/api/add';
+const endpoint = '/contacto/api/add';
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
             minLength: 3,
             maxLength: 50,
             required: true,
-            errorMsg: 'El nombre debe tener al menos 3 caracteres.'
+            pattern: /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$/,
+            errorMsg: 'El nombre solo debe contener letras, espacios y acentos, y tener al menos 3 caracteres.'
         },
         email: {
             required: true,
@@ -21,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         phone: {
             required: true,
-            pattern: /^[0-9()+-\s]{10}$/,
-            errorMsg: 'El teléfono debe tener 10 dígitos (sólo números).'
+            pattern: /^[0-9]{10}$/,
+            errorMsg: 'El teléfono debe tener exactamente 10 dígitos numéricos.'
         },
         message: {
             required: true,
@@ -127,12 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mostrar mensaje global en #formAlerts
+    // Mostrar mensaje global en #formAlerts y luego de 5s lo ocultamos
     function showAlert(message, type) {
         const alertDiv = document.createElement('div');
         alertDiv.classList.add('alert', `alert-${type}`);
         alertDiv.textContent = message;
         formAlerts.appendChild(alertDiv);
+
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 5000);
     }
 
     // Asignar errores específicos del servidor a cada campo

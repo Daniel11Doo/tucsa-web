@@ -124,6 +124,8 @@
     border-radius: 4px;
     font: inherit;
     outline: none;
+    font-weight: 200;
+
 }
 
 .textarea-field {
@@ -239,4 +241,13 @@
 }
 
 /* Ajustes para pantallas <= 576px */
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .contact-section {
+        margin: 0 0.4rem;
+        padding: 0 1rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem 1rem;
+    }
+}

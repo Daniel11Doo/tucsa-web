@@ -5,24 +5,20 @@
 {% endblock %}
 {% block content %}
 
-<!-- Sección Hero para Contacto -->
 <section class="contact-hero">
-    <!-- Imagen de fondo -->
     <img src="{{ url_for('static', filename='images/tuberias_banner.jpg') }}" alt="Banner de Contacto" class="hero-bg">
     <h1>Contáctanos</h1>
 </section>
 
-<!-- Sección principal de Contacto -->
 <section class="contact-section">
-    <!-- Información de contacto / sucursales -->
     <div class="contact-info">
         <h2>Solicita una Cotización</h2>
         <div class="container-sub-info">
             <img src="{{ url_for('static', filename='images/icons/ubicacion.png') }}" alt="ubicación">
             <p>
                 <strong>Sucursales</strong><br>
-                Carretera Pénjamo S/N, Barrio San José<br>
-                Frente a la Gasera, Ocosingo, Chiapas, MX.<br><br>
+                Callejón Periférico Sin Número Barrio San José <br>
+                Frente a Gorza, Ocosingo Chiapas.<br> <br>
                 San Antonio Centro, 29840 Chilón, Chiapas.<br>
             </p>
         </div>
@@ -41,11 +37,9 @@
             </p>
         </div>
 
-        <!-- Botón para WhatsApp -->
         <a href="https://wa.me/529613412584" class="btn-whatsapp">Enviar WhatsApp</a>
     </div>
 
-    <!-- Formulario de contacto -->
     <div class="contact-form">
         <form id="contactForm">
             {{ form.csrf_token }}
@@ -94,13 +88,11 @@
     </div>
 </section>
 
-<!-- Sección de mapa (opcional) -->
 <section class="map-section">
-    <h2>Nuestra Ubicación</h2>
-    <!-- Inserta tu mapa de Google con embed -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;"
-        allowfullscreen="" loading="lazy">
-    </iframe>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.3891594986467!2d-92.26668262353026!3d17.10250628373685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85f28f6c38383ac5%3A0x236a02696972c7a3!2sTUCSA!5e0!3m2!1ses-419!2smx!4v1739753519969!5m2!1ses-419!2smx"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 {% endblock %}

@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField 
 from wtforms.fields import EmailField
-from wtforms.validators import DataRequired, Email, Length
+from wtforms.validators import DataRequired, Email, Length, Regexp
 
 class ContactForm(FlaskForm):
     name = StringField(
@@ -17,7 +17,8 @@ class ContactForm(FlaskForm):
     phone = StringField(
         'Teléfono',
         validators=[DataRequired(message="El teléfono es requerido."),
-                    Length(min=10, max=10, message="El teléfono debe tener 10 dígitos.")]
+                    Length(min=10, max=10, message="El teléfono debe tener 10 dígitos."), 
+                    Regexp(r'^[0-9]{10}$', message="Solo se permiten 10 dígitos numéricos.")]
     )
     message = TextAreaField(
         'Mensaje',
